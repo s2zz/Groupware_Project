@@ -457,6 +457,8 @@ function tag_list_opener(type) {
 				}).done(function(resp) {
 					if (!resp.length == "0") {
 						for (let i = 0; i < resp.length; i++) {
+							$('#hidden_tag_list').val(selectedTags);
+							console.log($("#hidden_tag_list").val());
 							const isTagSelected = selectedTags.includes(resp[i].tag);
 							const tagClass = isTagSelected ? "modal_tag_select_item select" : "modal_tag_select_item";
 							$(".modal_tag_select_list").append("<div class='" + tagClass + "'>" + resp[i].tag + "</div>");
